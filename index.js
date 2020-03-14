@@ -61,7 +61,8 @@ server.delete('/users/:id', (req, res) => {
 
    db.remove(id)
       .then(deleted => {
-         deleted ? res.status(204).end : 
+         deleted ? 
+         res.status(204).end : 
          res.status(404).json({ success: false, message: 'The user with the specified ID does not exist.' })
       })
       .catch(err => {
